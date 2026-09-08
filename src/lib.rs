@@ -396,7 +396,6 @@ impl MMIO for SoC {
             | Self::MT6853
             | Self::MT6873
             | Self::MT6877
-            | Self::MT6879
             | Self::MT6885
             | Self::MT6893
             | Self::MT6989
@@ -406,6 +405,7 @@ impl MMIO for SoC {
             Self::MT6735 | Self::MT6753 | Self::MT6799 => Some(nz(0x10004000)),
             Self::MT6855
             | Self::MT6878
+            | Self::MT6879
             | Self::MT6886
             | Self::MT6895
             | Self::MT6897
@@ -480,14 +480,18 @@ impl MMIO for SoC {
             | Self::MT6853
             | Self::MT6873
             | Self::MT6877
-            | Self::MT6879
             | Self::MT6885
             | Self::MT6893
             | Self::MT8188
             | Self::MT8696 => 0x1000a000,
             Self::MT6575 | Self::MT6577 => 0xc101a000, // XXX: not confirmed
             Self::MT6735 | Self::MT6753 => 0x10008000,
-            Self::MT6855 | Self::MT6886 | Self::MT6895 | Self::MT6983 | Self::MT6985 => 0x1c009000,
+            Self::MT6855
+            | Self::MT6879
+            | Self::MT6886
+            | Self::MT6895
+            | Self::MT6983
+            | Self::MT6985 => 0x1c009000,
             Self::MT6858 | Self::MT6878 | Self::MT6897 | Self::MT6899 | Self::MT6989 => 0x1040e000,
             Self::MT6991 | Self::MT6993 | Self::MT6995 => 0x1800e000,
         }
